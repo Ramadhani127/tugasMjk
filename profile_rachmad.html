@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Profil - Rachmad Ramadhan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .mobile-container {
+            max-width: 100%;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-image: url('untag.jpg');
+             background-position: center;
+            padding: 40px 20px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .back-button:active {
+            background: rgba(255,255,255,0.3);
+            transform: scale(0.95);
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .profile-id {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .biodata-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #e53e3e;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .biodata-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .biodata-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .biodata-label {
+            font-weight: bold;
+            color: #555;
+            min-width: 100px;
+            margin-right: 15px;
+        }
+
+        .biodata-value {
+            color: #333;
+            flex: 1;
+        }
+
+        .university-section {
+            background: linear-gradient(135deg, #e53e3e 0%, #d53030 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .university-name {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .university-address {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 35px 15px 25px;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 15px;
+            }
+
+            .profile-name {
+                font-size: 20px;
+            }
+
+            .profile-id {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .biodata-section {
+                padding: 20px;
+            }
+
+            .biodata-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .biodata-label {
+                min-width: auto;
+                margin-right: 0;
+            }
+
+            .university-section {
+                padding: 20px;
+            }
+
+            .university-name {
+                font-size: 18px;
+            }
+        }
+
+        @supports (padding: max(0px)) {
+            .mobile-container {
+                padding-top: max(0px, env(safe-area-inset-top));
+                padding-bottom: max(0px, env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">
+            <button class="back-button" onclick="goBack()">← Kembali</button>
+            
+            <div class="profile-photo">
+                <img src="rachmad.jpg" alt="Rachmad Ramadhan" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-placeholder" style="display: none;">
+                    RR
+                </div>
+            </div>
+
+            <div class="profile-name">Rachmad Ramadhan</div>
+            <div class="profile-id">NIM: 1462300137</div>
+        </div>
+
+        <div class="content">
+            <div class="biodata-section">
+                <div class="section-title">BIODATA PRIBADI</div>
+                
+                <div class="biodata-item">
+                    <div class="biodata-label">Nama Lengkap:</div>
+                    <div class="biodata-value">Rachmad Ramadhan</div>
+                </div>
+                
+                <div class="biodata-item">
+                    <div class="biodata-label">NIM:</div>
+                    <div class="biodata-value">1462300137</div>
+                </div>
+                
+                <div class="biodata-item">
+                    <div class="biodata-label">Tempat Lahir:</div>
+                    <div class="biodata-value">Malang</div>
+                </div>
+                
+                <div class="biodata-item">
+                    <div class="biodata-label">Tanggal Lahir:</div>
+                    <div class="biodata-value">22 November 2001</div>
+                </div>
+                
+                <div class="biodata-item">
+                    <div class="biodata-label">Jenis Kelamin:</div>
+                    <div class="biodata-value">Laki-laki</div>
+                </div>
+                
+                <div class="biodata-item">
+                    <div class="
